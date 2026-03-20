@@ -2,6 +2,7 @@ import EmployeeForm from "./components/EmployeeForm";
 import EmployeeTable from "./components/EmployeeTable";
 import AttendanceForm from "./components/AttendanceForm";
 import AttendanceTable from "./components/AttendanceTable";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <p className="text-gray-500 mb-6">
            Manage employees and track attendance
         </p>
+          <Dashboard />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <EmployeeForm />
