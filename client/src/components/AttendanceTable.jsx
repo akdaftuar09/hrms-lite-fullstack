@@ -4,11 +4,20 @@ import api from "../services/api";
 function AttendanceTable() {
   const [employeeId, setEmployeeId] = useState("");
   const [records, setRecords] = useState([]);
+  const [selectedDate, setSelectedDate] = useState("");
 
   const fetchAttendance = async () => {
     try {
       const response = await api.get(`/attendance/${employeeId}`);
-      setRecords(response.data);
+
+      let data = response.data;
+
+      if (selectedDate) {
+        data = data.filter((item) => item.date === selectedDate);
+      }
+
+      setRecords(data);
+
     } catch (error) {
       console.error("Error fetching attendance:", error);
     }
@@ -18,12 +27,20 @@ function AttendanceTable() {
     <div className="bg-white rounded-2xl shadow-sm p-6 border">
       <h2 className="text-xl font-semibold mb-4">Attendance Records</h2>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+
         <input
           placeholder="Enter Employee ID"
           value={employeeId}
           onChange={(e) => setEmployeeId(e.target.value)}
-          className="border rounded-lg p-3 flex-1"
+          className="border rounded-lg p-3"
+        />
+
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
+          className="border rounded-lg p-3"
         />
 
         <button
@@ -32,6 +49,7 @@ function AttendanceTable() {
         >
           View Attendance
         </button>
+
       </div>
 
       <div className="overflow-x-auto">
