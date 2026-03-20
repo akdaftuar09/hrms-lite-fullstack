@@ -8,6 +8,8 @@ A lightweight full-stack Human Resource Management System built for employee man
 - View employee list
 - Mark attendance
 - View attendance records
+- Dashboard Summary
+- Attendance date filtering
 - Responsive UI
 
 ## Tech Stack
