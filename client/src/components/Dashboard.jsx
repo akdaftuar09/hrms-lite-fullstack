@@ -12,11 +12,9 @@ function Dashboard() {
   const fetchSummary = async () => {
     try {
       const employees = await api.get("/employees");
-
       setEmployeeCount(employees.data.length);
 
       const today = new Date().toISOString().split("T")[0];
-
       let present = 0;
 
       for (let emp of employees.data) {
@@ -32,23 +30,30 @@ function Dashboard() {
       }
 
       setPresentCount(present);
-
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <div className="bg-white rounded-2xl shadow-sm border p-6">
-        <h3 className="text-gray-500">Total Employees</h3>
-        <p className="text-3xl font-bold">{employeeCount}</p>
+      <div className="bg-white rounded-3xl shadow-lg border border-slate-200 p-7">
+        <p className="text-sm font-medium text-slate-500 mb-2">
+          Total Employees
+        </p>
+        <h2 className="text-4xl font-bold text-slate-900">
+          {employeeCount}
+        </h2>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm border p-6">
-        <h3 className="text-gray-500">Present Today</h3>
-        <p className="text-3xl font-bold">{presentCount}</p>
+      <div className="bg-white rounded-3xl shadow-lg border border-slate-200 p-7">
+        <p className="text-sm font-medium text-slate-500 mb-2">
+          Present Today
+        </p>
+        <h2 className="text-4xl font-bold text-slate-900">
+          {presentCount}
+        </h2>
       </div>
 
     </div>
