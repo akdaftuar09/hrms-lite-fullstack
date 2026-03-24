@@ -18,7 +18,7 @@ Backend: FastAPI
 Database: MongoDB Atlas  
 
 ## Deployment
-Frontend: https://hrms-lite-fullstack-nine.vercel.app  
+Frontend: https://hrms-lite-fullstack-85vm.vercel.app/ 
 Backend: https://hrms-lite-backend-zxl8.onrender.com  
 
 ## Run Locally
