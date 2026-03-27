@@ -32,7 +32,7 @@ A lightweight, full-stack Human Resource Management System built for employee ma
 
 | Service | URL |
 |---|---|
-| Frontend | https://hrms-lite-fullstack-85vm.vercel.app/ |
+| Frontend | https://hrms-lite-etharaai.vercel.app/ |
 | Backend API Docs | https://hrms-lite-backend-zxl8.onrender.com/docs |
 | GitHub Repository | https://github.com/akdaftuar09/hrms-lite-fullstack |
 
